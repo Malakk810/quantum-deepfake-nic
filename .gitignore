@@ -1,0 +1,13 @@
+data/raw/
+features/*.npy
+features/*.npz
+features/*.pkl
+results/checkpoints/
+*.pt
+*.pth
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+.venv/
+venv/

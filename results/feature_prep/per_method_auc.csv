@@ -1,0 +1,9 @@
+input,method,video auc
+first 8,Deepfakes,0.8166326530612246
+first 8,Face2Face,0.5636734693877551
+first 8,FaceSwap,0.6868367346938775
+first 8,NeuralTextures,0.4771938775510204
+512 linear probe,Deepfakes,0.963265306122449
+512 linear probe,Face2Face,0.8763775510204082
+512 linear probe,FaceSwap,0.9443367346938776
+512 linear probe,NeuralTextures,0.7860714285714286

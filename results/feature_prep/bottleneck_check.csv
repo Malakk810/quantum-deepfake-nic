@@ -1,0 +1,7 @@
+input,frame auc,video auc
+first 4,0.6,0.618
+first 8,0.612,0.636
+first 12,0.665,0.689
+all 32,0.731,0.757
+best 8,0.692,0.713
+512 linear probe,0.86,0.893

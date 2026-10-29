@@ -72,6 +72,31 @@ while the detector runs (default 4).
 Expected size: about 107,000 crops (FF++ train 46,080, val 22,400, test 22,400; Celeb-DF test 16,576),
 roughly 10 GB of PNG.
 
+## Phase 1 notebooks
+
+Every notebook in `notebooks/` is the executed copy from Kaggle, with its outputs kept as the record of the run.
+The small result files each one wrote (CSV, JSON, figures) are in `results/<notebook name>/`.
+Large outputs (videos, face crops, features) stay in private Kaggle datasets.
+Run them in this order:
+
+| # | Notebook | Kaggle hardware, run time | Reads | Writes |
+|---|---|---|---|---|
+| 1 | `download_faceforensics.ipynb` | CPU, 2 h 31 min | the FF++ download script | FF++ c23 videos |
+| 2 | `face_crops.ipynb` | T4, 1 h 38 min | FF++ videos, Celeb-DF test videos | 224x224 face crops |
+| 3 | `clip_features.ipynb` | T4, 40 min | face crops | 512-d CLIP features per crop |
+| 4 | `feature_prep.ipynb` | 39 s | CLIP features | PCA to 32, angles, inner fitness split, bottleneck check |
+| 5 | `classical_baselines.ipynb` | 1.5 min | CLIP features, prepared features | classical baselines |
+| 6 | `hand_designed_grid.ipynb` | 47 min | prepared features | 9-circuit grid, ranking check, `recipe.json` |
+| 7 | `pls_preview.ipynb` | 18 min | CLIP features, prepared features | grid circuits on 8 PLS components |
+| 8 | `fairness_check.ipynb` | 15 min | CLIP features, prepared features | entanglement fairness check |
+| 9 | `qcnn_baseline.ipynb` | 17.5 min | CLIP features, prepared features | QCNN baseline |
+
+Still to come: the GA and random search, PSO, ACO and GWO.
+
+The ranking check in notebook 6 picked learning rate 0.1 with 6 epochs for short training.
+It is tied with 0.03 at 6 epochs (mean within-input Spearman 0.692 against 0.683), and the tie went
+to the faster setting by 0.07 s per evaluation; an earlier run picked 0.03 the same way.
+
 ## Datasets
 
 - FaceForensics++ (c23), main benchmark, access by request. Official splits in `data/splits/`.

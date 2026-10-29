@@ -1,0 +1,45 @@
+model,method,video auc
+"logistic regression, first 8",Deepfakes,0.8160204081632653
+"logistic regression, first 8",Face2Face,0.5635204081632653
+"logistic regression, first 8",FaceSwap,0.6862755102040816
+"logistic regression, first 8",NeuralTextures,0.4764285714285714
+"sin/cos logistic regression, first 8",Deepfakes,0.8403061224489796
+"sin/cos logistic regression, first 8",Face2Face,0.5625
+"sin/cos logistic regression, first 8",FaceSwap,0.690612244897959
+"sin/cos logistic regression, first 8",NeuralTextures,0.4855102040816327
+"mlp 6 hidden, first 8",Deepfakes,0.8295408163265307
+"mlp 6 hidden, first 8",Face2Face,0.5824489795918367
+"mlp 6 hidden, first 8",FaceSwap,0.6816326530612244
+"mlp 6 hidden, first 8",NeuralTextures,0.49173469387755103
+"logistic regression, best 8",Deepfakes,0.8557142857142858
+"logistic regression, best 8",Face2Face,0.6607142857142858
+"logistic regression, best 8",FaceSwap,0.8387244897959184
+"logistic regression, best 8",NeuralTextures,0.4968877551020408
+"sin/cos logistic regression, best 8",Deepfakes,0.8612755102040817
+"sin/cos logistic regression, best 8",Face2Face,0.6585204081632653
+"sin/cos logistic regression, best 8",FaceSwap,0.8348469387755102
+"sin/cos logistic regression, best 8",NeuralTextures,0.4961734693877551
+"mlp 6 hidden, best 8",Deepfakes,0.8519897959183673
+"mlp 6 hidden, best 8",Face2Face,0.6602040816326531
+"mlp 6 hidden, best 8",FaceSwap,0.8454591836734693
+"mlp 6 hidden, best 8",NeuralTextures,0.49984693877551023
+"sin/cos logistic regression, greedy 8",Deepfakes,0.862857142857143
+"sin/cos logistic regression, greedy 8",Face2Face,0.6689285714285714
+"sin/cos logistic regression, greedy 8",FaceSwap,0.8220408163265305
+"sin/cos logistic regression, greedy 8",NeuralTextures,0.5083673469387755
+"mlp 6 hidden, greedy 8",Deepfakes,0.847295918367347
+"mlp 6 hidden, greedy 8",Face2Face,0.6746428571428572
+"mlp 6 hidden, greedy 8",FaceSwap,0.8250000000000001
+"mlp 6 hidden, greedy 8",NeuralTextures,0.4988265306122448
+"logistic regression, all 32",Deepfakes,0.9166836734693877
+"logistic regression, all 32",Face2Face,0.7145408163265307
+"logistic regression, all 32",FaceSwap,0.8679591836734695
+"logistic regression, all 32",NeuralTextures,0.5264285714285715
+pls 8 + logistic regression,Deepfakes,0.9491326530612245
+pls 8 + logistic regression,Face2Face,0.8157653061224489
+pls 8 + logistic regression,FaceSwap,0.9148979591836736
+pls 8 + logistic regression,NeuralTextures,0.6828571428571428
+"linear probe, 512 clip",Deepfakes,0.9633673469387756
+"linear probe, 512 clip",Face2Face,0.876734693877551
+"linear probe, 512 clip",FaceSwap,0.9443367346938776
+"linear probe, 512 clip",NeuralTextures,0.7860714285714286

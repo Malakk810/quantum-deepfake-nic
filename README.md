@@ -90,10 +90,10 @@ Run them in this order:
 | 7 | `pls_preview.ipynb` | 18 min | CLIP features, prepared features | grid circuits on 8 PLS components |
 | 8 | `fairness_check.ipynb` | 15 min | CLIP features, prepared features | entanglement fairness check |
 | 9 | `qcnn_baseline.ipynb` | 17.5 min | CLIP features, prepared features | QCNN baseline |
-| 10 | `search.ipynb` | 1 h 40 min | prepared features | GA and random search, 2 runs of 300 circuits each |
-| 11 | `more_search.ipynb` | 2 h 20 min | prepared features | PSO, ACO and GWO, 2 runs of 300 circuits each |
+| 10 | `GA_vs_RandomSearch.ipynb` | 1 h 40 min | prepared features | GA and random search, 2 runs of 300 circuits each |
+| 11 | `PSO_ACO_GWO.ipynb` | 2 h 20 min | prepared features | PSO, ACO and GWO, 2 runs of 300 circuits each |
 
-The result files of `search.ipynb` and `more_search.ipynb` stay on Kaggle for now.
+The result files of `GA_vs_RandomSearch.ipynb` and `PSO_ACO_GWO.ipynb` stay on Kaggle for now.
 The Phase 1 searches use short-training learning rate 0.03 (tied with 0.1 in the ranking check); Phase 2 uses 0.1.
 GWO stopped early in both runs (260 and 240 circuits), when no new circuits came up for 20 rounds.
 

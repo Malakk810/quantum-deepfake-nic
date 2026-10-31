@@ -1,6 +1,6 @@
 # quantum-deepfake-nic
 
-DSAI 403 (Nature-Inspired Computation) course project, idea 41.
+DSAI 403 (Nature-Inspired Computation) course project.
 Nature-inspired architecture search for quantum deepfake image classifiers.
 
 ## Structure

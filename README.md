@@ -5,15 +5,15 @@ Nature-inspired architecture search for quantum deepfake image classifiers.
 
 ## Structure
 
-| Folder | Contents | In git? |
-|---|---|---|
-| `data/raw/` | Downloaded datasets (FF++, Celeb-DF) | No |
-| `data/splits/` | Fixed train/val/test index files | Yes |
-| `features/` | Cached CLIP embeddings and PCA outputs (.npy) | No |
-| `src/` | All code | Yes |
-| `experiments/` | One config per experiment | Yes |
-| `results/` | Run logs (CSV), figures, tables | Yes, except checkpoints |
-| `docs/` | Research plan, hypotheses, notes | Yes |
+| Folder | Contents |
+|---|---|
+| `data/raw/` | Downloaded datasets (FF++, Celeb-DF) |
+| `data/splits/` | Fixed train/val/test index files | 
+| `features/` | Cached CLIP embeddings and PCA outputs (.npy) | 
+| `src/` | All code | 
+| `experiments/` | One config per experiment | 
+| `results/` | Run logs (CSV), figures, tables |
+| `docs/` | Research plan, hypotheses, notes | 
 
 Large files (`data/raw/`, `features/*.npy`, checkpoints) stay out of git.
 Keep the cached features in one shared place (a private Kaggle dataset or a shared Drive folder)

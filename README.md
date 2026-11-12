@@ -1,6 +1,5 @@
 # quantum-deepfake-nic
 
-DSAI 403 (Nature-Inspired Computation) course project.
 Nature-inspired architecture search for quantum deepfake image classifiers.
 
 ## Structure
@@ -15,9 +14,7 @@ Nature-inspired architecture search for quantum deepfake image classifiers.
 | `results/` | Run logs (CSV), figures, tables |
 | `docs/` | Research plan, hypotheses, notes | 
 
-Large files (`data/raw/`, `features/*.npy`, checkpoints) stay out of git.
-Keep the cached features in one shared place (a private Kaggle dataset or a shared Drive folder)
-so every machine loads identical files.
+Large files (`data/raw/`, `features/*.npy`, checkpoints) are not included on git.
 
 ## Setup
 
@@ -25,23 +22,20 @@ so every machine loads identical files.
 pip install -r requirements.txt
 ```
 
-Kaggle and Colab come with torch, numpy and scikit-learn preinstalled, so those are not pinned.
-Every run logs their versions instead (see `src/utils.py`).
-
 ## Rules for every experiment
 
 - Call `set_seed(seed)` at the start of every script. Final runs use seeds 0, 1, 2, 3, 4.
-- Splits are created once and committed to `data/splits/`. Never regenerate them.
+- Splits are created once and committed to `data/splits/`. Don't regenerate them.
 - Fit PCA and any scaler on the training split only.
-- The test split is used once per final model, never during search or tuning.
-- Set `MACHINE_NAME` (for example `kaggle-malak`, `laptop-malak`) so every logged row records where it ran.
+- The test split is used once per final model, not during search or tuning.
+- Set `MACHINE_NAME` so every logged row records where it ran.
 - Every run appends one row to a CSV in `results/` with config, seed, machine, metrics and wall-clock time.
 
 ## Step 1: face extraction
 
 Samples frames from each video, detects the largest face with RetinaFace (batch-face, ResNet-50 backbone),
 crops a square box 1.3x the face size, resizes to 224x224 and saves PNG.
-Runs on a GPU when one is available, otherwise on the CPU (much slower).
+Runs on a GPU when one is available.
 For the full run on Kaggle, follow `docs/kaggle_face_extraction.md`.
 
 Frames per video: train uses 32 per real video and 8 per fake video (FF++ has 4 fakes per real,
@@ -64,8 +58,6 @@ Output, per split: `faces/<dataset>/<split>/<method>/<video_id>/<frame>.png`, pl
 (one line per run: settings, machine, versions, time).
 Labels everywhere: 0 = real, 1 = fake.
 
-If a session dies, rerun the same command. Videos that already have their `rows.csv` are skipped.
-
 Use the same `--network` for every split. `--workers` sets how many videos are decoded in parallel
 while the detector runs (default 4).
 
@@ -76,7 +68,7 @@ roughly 10 GB of PNG.
 
 Every notebook in `notebooks/` is the executed copy from Kaggle, with its outputs kept as the record of the run.
 The small result files each one wrote (CSV, JSON, figures) are in `results/<notebook name>/`.
-Large outputs (videos, face crops, features) stay in private Kaggle datasets.
+Large outputs (videos, face crops, features) are in private Kaggle datasets.
 Run them in this order:
 
 | # | Notebook | Kaggle hardware, run time | Reads | Writes |
@@ -93,7 +85,6 @@ Run them in this order:
 | 10 | `GA_vs_RandomSearch.ipynb` | 1 h 40 min | prepared features | GA and random search, 2 runs of 300 circuits each |
 | 11 | `PSO_ACO_GWO.ipynb` | 2 h 20 min | prepared features | PSO, ACO and GWO, 2 runs of 300 circuits each |
 
-The result files of `GA_vs_RandomSearch.ipynb` and `PSO_ACO_GWO.ipynb` stay on Kaggle for now.
 The Phase 1 searches use short-training learning rate 0.03 (tied with 0.1 in the ranking check); Phase 2 uses 0.1.
 GWO stopped early in both runs (260 and 240 circuits), when no new circuits came up for 20 rounds.
 

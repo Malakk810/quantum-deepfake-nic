@@ -96,4 +96,3 @@ to the faster setting by 0.07 s per evaluation; an earlier run picked 0.03 the s
 
 - FaceForensics++ (c23), main benchmark, access by request. Official splits in `data/splits/`.
 - Celeb-DF v2, cross-dataset test only, using its official test list (518 videos), access by request.
-- Neither dataset may be redistributed: keep any copies (for example Kaggle datasets) private.

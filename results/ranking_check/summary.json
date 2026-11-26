@@ -1,0 +1,16 @@
+{
+ "backbone": "l14",
+ "genomes": 60,
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "seed_to_seed_spearman": 0.9972955450588129,
+ "twin_spearman_C=0.01": 0.9955543206446237,
+ "twin_spearman_C=0.1": 0.9954431786607393,
+ "twin_spearman_C=1": 0.9954431786607393,
+ "best_twin_c": 0.01,
+ "twin_spearman": 0.9955543206446237,
+ "passed": true
+}

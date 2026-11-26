@@ -93,6 +93,7 @@ Run them in this order:
 | 20 | `pool_prep.ipynb` | 20 min | B/16, L/14 and EfficientNet-B4 features | input pool for three backbones: 128 PCA + 16 PLS as angles, column strength, bottleneck table on val and with one manipulation held out (PLS refit per fold, C tuned on the inner split) |
 | 21 | `ranking_check.ipynb` | 5 min | input pool | 60 genomes on the L/14 pool, real circuits (3 seeds) against the classical twin: Spearman 0.996, seed-to-seed 0.997 |
 | 22 | `genome_search.ipynb` | 15.6 min | input pool | stage 1 search on all three backbones: random search, GA, PSO and memetic GA (10 runs each), DE and GWO (5 runs each), 1,000 twin evaluations per run |
+| 23 | `search_analysis.ipynb` | 5 min | input pool, genome search output | baselines (first 8 PCA, strongest 8, PLS 8, MI top 8, greedy), val video AUC of each run's top genome with the twin, Kruskal-Wallis, Holm-corrected Mann-Whitney and A12, top 3 genomes per run |
 
 The two searches (notebooks 12 and 13) use short-training learning rate 0.03, tied with 0.1 in the ranking check.
 GWO stopped early in both runs (260 and 240 circuits), when no new circuits came up for 20 rounds.

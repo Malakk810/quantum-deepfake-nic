@@ -1,0 +1,17 @@
+{
+ "encoder": "ViT-B/16",
+ "rule": "Amendment 2 (audio plan)",
+ "all methods": {
+  "decision": "gap opens",
+  "inputs_with_gap": [
+   "PCA 16"
+  ]
+ },
+ "NeuralTextures held out": {
+  "decision": "gap opens",
+  "inputs_with_gap": [
+   "PCA 8",
+   "PCA 16"
+  ]
+ }
+}

@@ -6,15 +6,13 @@ Nature-inspired architecture search for quantum deepfake image classifiers.
 
 | Folder | Contents |
 |---|---|
-| `data/raw/` | Downloaded datasets (FF++, Celeb-DF) |
-| `data/splits/` | Fixed train/val/test index files | 
-| `features/` | Cached CLIP embeddings and PCA outputs (.npy) | 
-| `src/` | All code | 
-| `experiments/` | One config per experiment | 
-| `results/` | Run logs (CSV), figures, tables |
-| `docs/` | Research plan, hypotheses, notes | 
+| `data/splits/` | Official FF++ train/val/test lists |
+| `notebooks/` | Every notebook as run on Kaggle, with its outputs |
+| `results/` | Small files each notebook wrote, one folder per notebook |
+| `src/` | Face extraction script, seed and logging helpers |
+| `docs/` | Kaggle face extraction checklist |
 
-Large files (`data/raw/`, `features/*.npy`, checkpoints) are not included on git.
+Videos, face crops and features are not on git. They are in private Kaggle datasets.
 
 ## Setup
 
@@ -64,7 +62,7 @@ while the detector runs (default 4).
 Expected size: about 107,000 crops (FF++ train 46,080, val 22,400, test 22,400; Celeb-DF test 16,576),
 roughly 10 GB of PNG.
 
-## Phase 1 notebooks
+## Notebooks
 
 Every notebook in `notebooks/` is the executed copy from Kaggle, with its outputs kept as the record of the run.
 The small result files each one wrote (CSV, JSON, figures) are in `results/<notebook name>/`.
@@ -78,19 +76,29 @@ Run them in this order:
 | 3 | `clip_features.ipynb` | T4, 40 min | face crops | 512-d CLIP features per crop |
 | 4 | `feature_prep.ipynb` | 39 s | CLIP features | PCA to 32, angles, inner fitness split, bottleneck check |
 | 5 | `classical_baselines.ipynb` | 1.5 min | CLIP features, prepared features | classical baselines |
-| 6 | `hand_designed_grid.ipynb` | 47 min | prepared features | 9-circuit grid, ranking check, `recipe.json` |
-| 7 | `pls_preview.ipynb` | 18 min | CLIP features, prepared features | grid circuits on 8 PLS components |
-| 8 | `fairness_check.ipynb` | 15 min | CLIP features, prepared features | entanglement fairness check |
-| 9 | `qcnn_baseline.ipynb` | 17.5 min | CLIP features, prepared features | QCNN baseline |
-| 10 | `GA_vs_RandomSearch.ipynb` | 1 h 40 min | prepared features | GA and random search, 2 runs of 300 circuits each |
-| 11 | `PSO_ACO_GWO.ipynb` | 2 h 20 min | prepared features | PSO, ACO and GWO, 2 runs of 300 circuits each |
+| 6 | `first_quantum_circuit.ipynb` | 7 min | prepared features | first 8-qubit circuit: ring vs no entangler, learning rates, time per depth |
+| 7 | `hand_designed_grid.ipynb` | 47 min | prepared features | 9-circuit grid, ranking check, `recipe.json` |
+| 8 | `pls_preview.ipynb` | 18 min | CLIP features, prepared features | grid circuits on 8 PLS components |
+| 9 | `fairness_check.ipynb` | 15 min | CLIP features, prepared features | entanglement fairness check |
+| 10 | `qcnn_baseline.ipynb` | 17.5 min | CLIP features, prepared features | QCNN baseline |
+| 11 | `ga_vs_random_pilot.ipynb` | not recorded | prepared features | pilot GA and random search, 1 run of 100 circuits each |
+| 12 | `GA_vs_RandomSearch.ipynb` | 1 h 40 min | prepared features | GA and random search, 2 runs of 300 circuits each |
+| 13 | `PSO_ACO_GWO.ipynb` | 2 h 20 min | prepared features | PSO, ACO and GWO, 2 runs of 300 circuits each |
+| 14 | `clip_features_l14.ipynb` | T4 x2, 1 h 33 min | face crops | 768-d CLIP ViT-L/14 features per crop |
+| 15 | `feature_prep_l14.ipynb` | 44 s | ViT-L/14 features | same as notebook 4 on the ViT-L/14 features |
+| 16 | `precheck_b16.ipynb` | 5 min | CLIP features, prepared features | classical pre-check: PLS 8/16/32, 16 inputs on 8 qubits, 8 of 512 raw CLIP dims picked by ACO, greedy and random search |
+| 17 | `precheck_l14.ipynb` | 9 min | ViT-L/14 features, prepared ViT-L/14 features | the same pre-check on ViT-L/14 (768 raw dims) |
+| 18 | `interaction_check.ipynb` | 52 min | CLIP features, prepared features | additive vs interaction models, all methods and NeuralTextures held out |
 
-The Phase 1 searches use short-training learning rate 0.03 (tied with 0.1 in the ranking check); Phase 2 uses 0.1.
+The two searches (notebooks 12 and 13) use short-training learning rate 0.03, tied with 0.1 in the ranking check.
 GWO stopped early in both runs (260 and 240 circuits), when no new circuits came up for 20 rounds.
 
-The ranking check in notebook 6 picked learning rate 0.1 with 6 epochs for short training.
+The ranking check in notebook 7 picked learning rate 0.1 with 6 epochs for short training.
 It is tied with 0.03 at 6 epochs (mean within-input Spearman 0.692 against 0.683), and the tie went
 to the faster setting by 0.07 s per evaluation; an earlier run picked 0.03 the same way.
+
+Notebooks 16 and 17 are one notebook run twice, with `encoder` set to `"b16"` and `"l14"`.
+Their raw search logs (`raw_search_log.csv`, 2.5 and 3.9 MB) are left out of `results/` and stay in the Kaggle output.
 
 ## Datasets
 

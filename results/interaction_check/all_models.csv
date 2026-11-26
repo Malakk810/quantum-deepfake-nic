@@ -1,0 +1,79 @@
+pass,input,family,model,setting,auc,eer %
+all methods,PCA 8,additive,logistic regression,C=0.001,0.6367346938775511,39.642857142857146
+all methods,PCA 8,additive,"logistic regression, clipped",C=0.1,0.6363392857142858,39.55357142857143
+all methods,PCA 8,additive,twin,C=0.01,0.6471045918367347,39.642857142857146
+all methods,PCA 8,interaction,twin + pairwise products,C=0.001,0.6567219387755102,38.74999999999999
+all methods,PCA 8,interaction,gradient boosting,"rate=0.03, leaves=15",0.6478698979591836,37.76785714285714
+all methods,PCA 8,interaction,MLP,"hidden=(64,), alpha=0.0001",0.6612627551020409,38.39285714285714
+all methods,PCA 16,additive,logistic regression,C=0.001,0.6897576530612245,36.16071428571428
+all methods,PCA 16,additive,"logistic regression, clipped",C=0.001,0.6894005102040817,36.339285714285715
+all methods,PCA 16,additive,twin,C=0.001,0.6998724489795918,35.98214285714286
+all methods,PCA 16,interaction,twin + pairwise products,C=0.001,0.7246938775510203,34.64285714285714
+all methods,PCA 16,interaction,gradient boosting,"rate=0.03, leaves=15",0.7105484693877551,35.62499999999999
+all methods,PCA 16,interaction,MLP,"hidden=(64,), alpha=0.01",0.720892857142857,34.375
+all methods,PCA 32,additive,logistic regression,C=0.001,0.755841836734694,32.76785714285714
+all methods,PCA 32,additive,"logistic regression, clipped",C=0.01,0.7556377551020409,32.232142857142854
+all methods,PCA 32,additive,twin,C=0.001,0.7622448979591837,32.232142857142854
+all methods,PCA 32,interaction,twin + pairwise products,C=0.001,0.7757908163265306,30.80357142857143
+all methods,PCA 32,interaction,gradient boosting,"rate=0.03, leaves=63",0.775484693877551,28.57142857142857
+all methods,PCA 32,interaction,MLP,"hidden=(64,), alpha=0.01",0.7642857142857143,30.53571428571429
+all methods,PLS 8,additive,logistic regression,C=0.01,0.8407525510204081,25.624999999999996
+all methods,PLS 8,additive,"logistic regression, clipped",C=1,0.8407908163265307,25.803571428571427
+all methods,PLS 8,additive,twin,C=0.1,0.8419897959183673,25.71428571428571
+all methods,PLS 8,interaction,twin + pairwise products,C=0.01,0.8451658163265308,25.178571428571427
+all methods,PLS 8,interaction,gradient boosting,"rate=0.1, leaves=15",0.8455867346938775,23.839285714285715
+all methods,PLS 8,interaction,MLP,"hidden=(128, 64), alpha=0.0001",0.846390306122449,25.089285714285715
+all methods,PLS 16,additive,logistic regression,C=0.001,0.8722831632653061,21.42857142857143
+all methods,PLS 16,additive,"logistic regression, clipped",C=0.001,0.8718877551020408,20.446428571428573
+all methods,PLS 16,additive,twin,C=0.1,0.8730867346938775,22.053571428571427
+all methods,PLS 16,interaction,twin + pairwise products,C=0.001,0.8729974489795916,22.32142857142857
+all methods,PLS 16,interaction,gradient boosting,"rate=0.03, leaves=15",0.871530612244898,21.785714285714285
+all methods,PLS 16,interaction,MLP,"hidden=(64,), alpha=0.01",0.8699234693877551,21.785714285714285
+all methods,PLS 32,additive,logistic regression,C=0.01,0.8799362244897959,20.71428571428572
+all methods,PLS 32,additive,"logistic regression, clipped",C=100,0.879732142857143,20.80357142857143
+all methods,PLS 32,additive,twin,C=1,0.8799489795918367,20.17857142857143
+all methods,PLS 32,interaction,twin + pairwise products,C=0.001,0.8830994897959183,19.910714285714285
+all methods,PLS 32,interaction,gradient boosting,"rate=0.03, leaves=15",0.8810076530612245,21.339285714285715
+all methods,PLS 32,interaction,MLP,"hidden=(64,), alpha=0.0001",0.8823341836734694,20.625000000000004
+all methods,full 512,additive,logistic regression,C=10,0.8938520408163265,18.214285714285715
+all methods,full 512,interaction,gradient boosting,"rate=0.03, leaves=63",0.8382908163265306,26.249999999999996
+all methods,full 512,interaction,MLP,"hidden=(64,), alpha=0.0001",0.8635204081632653,19.910714285714285
+NeuralTextures held out,PCA 8,additive,logistic regression,C=0.001,0.4723979591836735,50.0
+NeuralTextures held out,PCA 8,additive,"logistic regression, clipped",C=1,0.4719897959183674,50.0
+NeuralTextures held out,PCA 8,additive,twin,C=1,0.47908163265306125,51.42857142857142
+NeuralTextures held out,PCA 8,interaction,twin + pairwise products,C=1000,0.4937244897959184,49.28571428571429
+NeuralTextures held out,PCA 8,interaction,gradient boosting,"rate=0.1, leaves=63",0.49301020408163265,48.92857142857143
+NeuralTextures held out,PCA 8,interaction,MLP,"hidden=(128, 64), alpha=0.01",0.5046938775510205,47.857142857142854
+NeuralTextures held out,PCA 16,additive,logistic regression,C=0.1,0.49913265306122456,48.57142857142858
+NeuralTextures held out,PCA 16,additive,"logistic regression, clipped",C=0.001,0.49831632653061225,49.642857142857146
+NeuralTextures held out,PCA 16,additive,twin,C=10,0.4998979591836734,50.357142857142854
+NeuralTextures held out,PCA 16,interaction,twin + pairwise products,C=1000,0.5122448979591836,50.0
+NeuralTextures held out,PCA 16,interaction,gradient boosting,"rate=0.1, leaves=63",0.512295918367347,49.28571428571429
+NeuralTextures held out,PCA 16,interaction,MLP,"hidden=(128, 64), alpha=0.01",0.5225510204081633,48.57142857142858
+NeuralTextures held out,PCA 32,additive,logistic regression,C=1,0.5105102040816326,50.0
+NeuralTextures held out,PCA 32,additive,"logistic regression, clipped",C=1,0.5112755102040816,48.92857142857143
+NeuralTextures held out,PCA 32,additive,twin,C=1,0.5199489795918367,47.14285714285714
+NeuralTextures held out,PCA 32,interaction,twin + pairwise products,C=1,0.5200510204081633,47.14285714285714
+NeuralTextures held out,PCA 32,interaction,gradient boosting,"rate=0.03, leaves=63",0.5221428571428571,47.857142857142854
+NeuralTextures held out,PCA 32,interaction,MLP,"hidden=(128, 64), alpha=0.01",0.5180102040816327,48.57142857142858
+NeuralTextures held out,PLS 8,additive,logistic regression,C=0.001,0.5783673469387756,44.99999999999999
+NeuralTextures held out,PLS 8,additive,"logistic regression, clipped",C=0.001,0.5788265306122449,44.99999999999999
+NeuralTextures held out,PLS 8,additive,twin,C=10,0.5769897959183674,44.64285714285714
+NeuralTextures held out,PLS 8,interaction,twin + pairwise products,C=0.001,0.5748469387755102,42.14285714285714
+NeuralTextures held out,PLS 8,interaction,gradient boosting,"rate=0.03, leaves=15",0.5694897959183675,44.99999999999999
+NeuralTextures held out,PLS 8,interaction,MLP,"hidden=(64,), alpha=0.0001",0.5716326530612246,44.285714285714285
+NeuralTextures held out,PLS 16,additive,logistic regression,C=0.001,0.6171938775510204,42.85714285714286
+NeuralTextures held out,PLS 16,additive,"logistic regression, clipped",C=0.001,0.6178061224489795,42.85714285714286
+NeuralTextures held out,PLS 16,additive,twin,C=0.001,0.6167857142857143,40.35714285714286
+NeuralTextures held out,PLS 16,interaction,twin + pairwise products,C=0.001,0.6137244897959184,40.35714285714286
+NeuralTextures held out,PLS 16,interaction,gradient boosting,"rate=0.1, leaves=15",0.6084183673469388,42.14285714285714
+NeuralTextures held out,PLS 16,interaction,MLP,"hidden=(64,), alpha=0.01",0.6067346938775511,43.92857142857143
+NeuralTextures held out,PLS 32,additive,logistic regression,C=0.001,0.6273979591836736,40.714285714285715
+NeuralTextures held out,PLS 32,additive,"logistic regression, clipped",C=0.001,0.6269897959183675,41.42857142857142
+NeuralTextures held out,PLS 32,additive,twin,C=0.001,0.6268367346938776,40.0
+NeuralTextures held out,PLS 32,interaction,twin + pairwise products,C=0.001,0.6202040816326531,41.42857142857142
+NeuralTextures held out,PLS 32,interaction,gradient boosting,"rate=0.1, leaves=15",0.6124489795918366,42.14285714285714
+NeuralTextures held out,PLS 32,interaction,MLP,"hidden=(64,), alpha=0.01",0.6170408163265306,41.07142857142857
+NeuralTextures held out,full 512,additive,logistic regression,C=1,0.6370918367346939,40.0
+NeuralTextures held out,full 512,interaction,gradient boosting,"rate=0.1, leaves=15",0.5629591836734694,45.714285714285715
+NeuralTextures held out,full 512,interaction,MLP,"hidden=(128, 64), alpha=0.0001",0.6062755102040817,42.85714285714286

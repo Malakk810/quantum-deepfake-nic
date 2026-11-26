@@ -90,7 +90,7 @@ Run them in this order:
 | 17 | `precheck_l14.ipynb` | 9 min | ViT-L/14 features, prepared ViT-L/14 features | the same pre-check on ViT-L/14 (768 raw dims) |
 | 18 | `interaction_check.ipynb` | 52 min | CLIP features, prepared features | additive vs interaction models, all methods and NeuralTextures held out |
 | 19 | `effnet_b4_features.ipynb` | T4, 1 h | face crops | 1792-d frozen EfficientNet-B4 features per crop, same rows as CLIP |
-| 20 | `pool_prep.ipynb` | 2.5 min | CLIP and EfficientNet-B4 features | input pool for both backbones: 128 PCA + 16 PLS as angles, column strength, bottleneck table |
+| 20 | `pool_prep.ipynb` | 20 min | B/16, L/14 and EfficientNet-B4 features | input pool for three backbones: 128 PCA + 16 PLS as angles, column strength, bottleneck table on val and with one manipulation held out (PLS refit per fold, C tuned on the inner split) |
 
 The two searches (notebooks 12 and 13) use short-training learning rate 0.03, tied with 0.1 in the ranking check.
 GWO stopped early in both runs (260 and 240 circuits), when no new circuits came up for 20 rounds.

@@ -89,6 +89,7 @@ Run them in this order:
 | 16 | `precheck_b16.ipynb` | 5 min | CLIP features, prepared features | classical pre-check: PLS 8/16/32, 16 inputs on 8 qubits, 8 of 512 raw CLIP dims picked by ACO, greedy and random search |
 | 17 | `precheck_l14.ipynb` | 9 min | ViT-L/14 features, prepared ViT-L/14 features | the same pre-check on ViT-L/14 (768 raw dims) |
 | 18 | `interaction_check.ipynb` | 52 min | CLIP features, prepared features | additive vs interaction models, all methods and NeuralTextures held out |
+| 19 | `effnet_b4_features.ipynb` | T4, 1 h | face crops | 1792-d frozen EfficientNet-B4 features per crop, same rows as CLIP |
 
 The two searches (notebooks 12 and 13) use short-training learning rate 0.03, tied with 0.1 in the ranking check.
 GWO stopped early in both runs (260 and 240 circuits), when no new circuits came up for 20 rounds.

@@ -94,6 +94,7 @@ Run them in this order:
 | 21 | `ranking_check.ipynb` | 5 min | input pool | 60 genomes on the L/14 pool, real circuits (3 seeds) against the classical twin: Spearman 0.996, seed-to-seed 0.997 |
 | 22 | `genome_search.ipynb` | 15.6 min | input pool | stage 1 search on all three backbones: random search, GA, PSO and memetic GA (10 runs each), DE and GWO (5 runs each), 1,000 twin evaluations per run |
 | 23 | `search_analysis.ipynb` | 5 min | input pool, genome search output | baselines (first 8 PCA, strongest 8, PLS 8, MI top 8, greedy), val video AUC of each run's top genome with the twin, Kruskal-Wallis, Holm-corrected Mann-Whitney and A12, top 3 genomes per run |
+| 24 | `genome_search_ablation.ipynb` | 4.9 min | input pool, ViT-L/14 features | exploratory ablation: GA on L/14 with a held-out-manipulation term in the fitness (PLS refit per fold), 10 runs |
 
 The two searches (notebooks 12 and 13) use short-training learning rate 0.03, tied with 0.1 in the ranking check.
 GWO stopped early in both runs (260 and 240 circuits), when no new circuits came up for 20 rounds.
@@ -105,6 +106,7 @@ to the faster setting by 0.07 s per evaluation; an earlier run picked 0.03 the s
 Notebooks 16 and 17 are one notebook run twice, with `encoder` set to `"b16"` and `"l14"`.
 Their raw search logs (`raw_search_log.csv`, 2.5 and 3.9 MB) are left out of `results/` and stay in the Kaggle output.
 
+Notebook 24 is `genome_search.ipynb` run with `mode = "ablation"`.
 Notebook 22 scores genomes with the classical twin only; validation, test and real circuits come later.
 Its fitness stores (13 MB per backbone) and full search log (33 MB) stay in the Kaggle output.
 

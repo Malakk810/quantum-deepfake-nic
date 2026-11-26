@@ -92,6 +92,7 @@ Run them in this order:
 | 19 | `effnet_b4_features.ipynb` | T4, 1 h | face crops | 1792-d frozen EfficientNet-B4 features per crop, same rows as CLIP |
 | 20 | `pool_prep.ipynb` | 20 min | B/16, L/14 and EfficientNet-B4 features | input pool for three backbones: 128 PCA + 16 PLS as angles, column strength, bottleneck table on val and with one manipulation held out (PLS refit per fold, C tuned on the inner split) |
 | 21 | `ranking_check.ipynb` | 5 min | input pool | 60 genomes on the L/14 pool, real circuits (3 seeds) against the classical twin: Spearman 0.996, seed-to-seed 0.997 |
+| 22 | `genome_search.ipynb` | 15.6 min | input pool | stage 1 search on all three backbones: random search, GA, PSO and memetic GA (10 runs each), DE and GWO (5 runs each), 1,000 twin evaluations per run |
 
 The two searches (notebooks 12 and 13) use short-training learning rate 0.03, tied with 0.1 in the ranking check.
 GWO stopped early in both runs (260 and 240 circuits), when no new circuits came up for 20 rounds.
@@ -102,6 +103,9 @@ to the faster setting by 0.07 s per evaluation; an earlier run picked 0.03 the s
 
 Notebooks 16 and 17 are one notebook run twice, with `encoder` set to `"b16"` and `"l14"`.
 Their raw search logs (`raw_search_log.csv`, 2.5 and 3.9 MB) are left out of `results/` and stay in the Kaggle output.
+
+Notebook 22 scores genomes with the classical twin only; validation, test and real circuits come later.
+Its fitness stores (13 MB per backbone) and full search log (33 MB) stay in the Kaggle output.
 
 ## Datasets
 

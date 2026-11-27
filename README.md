@@ -95,6 +95,10 @@ Run them in this order:
 | 22 | `genome_search.ipynb` | 15.6 min | input pool | stage 1 search on all three backbones: random search, GA, PSO and memetic GA (10 runs each), DE and GWO (5 runs each), 1,000 twin evaluations per run |
 | 23 | `search_analysis.ipynb` | 5 min | input pool, genome search output | baselines (first 8 PCA, strongest 8, PLS 8, MI top 8, greedy), val video AUC of each run's top genome with the twin, Kruskal-Wallis, Holm-corrected Mann-Whitney and A12, top 3 genomes per run |
 | 24 | `genome_search_ablation.ipynb` | 4.9 min | input pool, ViT-L/14 features | exploratory ablation: GA on L/14 with a held-out-manipulation term in the fitness (PLS refit per fold), 10 runs |
+| 25 | `final_circuits.ipynb` | 2 h 41 min | input pool, search analysis output | real 8-qubit circuits: the top genome of every run and the baselines (seed 0), then 7 finalists per backbone with 5 seeds, with and without a CZ ring; twin against circuit on val |
+| 26 | `context_table.ipynb` | 15 min | input pool, raw features, search outputs | twin, logistic regression and a 4-unit MLP on the same 8 inputs, on val and with one manipulation held out |
+| 27 | `single_test.ipynb` | 39 min | final circuits output, input pool, raw features | the single test: frozen finalists and the linear probe on FF++ test and Celeb-DF |
+| 28 | `paper_figures.ipynb` | under 1 min | single test, context table and final circuits outputs | the paper's tables (CSV, LaTeX, Markdown) and figures |
 
 The two searches (notebooks 12 and 13) use short-training learning rate 0.03, tied with 0.1 in the ranking check.
 GWO stopped early in both runs (260 and 240 circuits), when no new circuits came up for 20 rounds.
